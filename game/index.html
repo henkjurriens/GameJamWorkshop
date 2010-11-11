@@ -1,0 +1,52 @@
+<!doctype html>
+
+<head>
+
+<style>
+#game {
+   border : 1px solid black;
+}
+
+</style>
+
+
+<script>
+    var y = 0;
+
+	function init() {  
+      var canvas = document.getElementById("game");  
+      if (canvas.getContext) {  
+        var ctx = canvas.getContext("2d");  
+  
+      }
+
+      setInterval(dropBlock, 500);
+    }
+
+    function dropBlock(){
+	   var canvas = document.getElementById("game");  
+	   var ctx = canvas.getContext("2d");
+	
+	   ctx.clearRect(0,0,500,500); // clear canvas 
+	
+	   ctx.save();
+	   ctx.fillStyle = "rgb(200,0,0)";  
+       ctx.fillRect (10, 10+y, 55, 50);
+   	   ctx.restore();
+	   
+	   y += 10;
+	 }
+
+</script>
+
+</head>
+
+
+<body onload="init();">
+<canvas id="game" width="500" height="500">  
+
+</canvas>
+
+</body>
+
+</html>
