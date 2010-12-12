@@ -319,8 +319,9 @@
   
   pre {
     text-align: left;
-    font-family: 'Droid Sans Mono', Courier;        
-    padding: 10px 20px;
+    font-family: 'Droid Sans Mono', Courier;
+	font-size : 20px;
+    padding: 20px 20px;
     background: rgba(255, 0, 0, 0.05);
     -webkit-border-radius: 8px;
     -khtml-border-radius: 8px;
@@ -390,6 +391,17 @@
     -webkit-border-radius: 8px;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .photo-1 {
+	 border : 3px white solid;
+	 position : absolute;
+	 top : 350px;
+	 left : 300px;
+	 z-index : 0;
+ 	 rotation: -30deg;
+	 -webkit-transform: rotate(-30deg);
+	 -moz-transform: rotate(-30deg);
   }
   
   .css,
