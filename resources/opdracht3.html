@@ -1,0 +1,58 @@
+<h2>Opdracht 3</h2>
+<textarea rows="50" cols="80">
+	
+<!doctype html>
+
+<head>
+
+<style>
+#game {
+   border : 1px solid black;
+   background : url(background.png);
+}
+
+</style>
+
+
+<script>
+    var y = 0;
+
+ 	var blockObj = ;
+	var score = 0;
+
+	function init() {  
+      setInterval(dropBlock, 100);
+    }
+    
+
+    function dropBlock()
+    {
+	   var canvas = document.getElementById("game");  
+	   var ctx = canvas.getContext("2d");
+       
+	   // clear canvas 
+	   ctx.clearRect(blockObj.x,blockObj.y,50,50); 
+	
+	   // new position
+	
+	   // draw block on new position
+		
+	 }
+	
+	
+</script>
+
+</head>
+
+
+<body onload="init();">
+<canvas id="game" width="800" height="600">  
+
+</canvas>
+
+</body>
+
+</html>
+
+
+</textarea>

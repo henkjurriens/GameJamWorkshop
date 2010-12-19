@@ -1,0 +1,98 @@
+<h2>Opdracht 4</h2>
+<textarea rows="50" cols="80">
+
+<!doctype html>
+
+<head>
+
+<style>
+#game {
+   border : 1px solid black;
+   background : url(background.png);
+}
+
+</style>
+
+
+<script>
+    var y = 0;
+
+    var personObj = {x: 250, y:500};
+ 	var blockObj = {x: 10, y:0};
+	var score = 0;
+
+	function init() {  
+      setInterval(dropBlock, 100);
+	
+    }
+    
+
+    function dropBlock()
+    {
+	   var canvas = document.getElementById("game");  
+	   var ctx = canvas.getContext("2d");
+       
+	   // clear canvas 
+	   ctx.clearRect(blockObj.x,blockObj.y,50,50); 
+	
+	   // new position
+	   blockObj.y += 10;
+	
+	   // draw block on new position
+	   ctx.fillStyle = "rgb(200,0,0)";  
+       ctx.fillRect (blockObj.x,blockObj.y, 50, 50);
+		
+	 }
+	
+	function drawPerson(){
+		var ctx = document.getElementById('game').getContext("2d");
+	
+	}
+	
+	function movePerson(dir)
+	{
+		var ctx = document.getElementById('game').getContext("2d");
+		ctx.clearRect(personObj.x,personObj.y-50,100,150);
+			if(dir == 'left'){
+		
+				if(personObj.x > 0){
+					personObj.x-=10;
+				}
+			}
+			if(dir == 'right'){
+				if(personObj.x < 500){
+					personObj.x+=10;
+					}
+			}
+			drawPerson();
+	}
+	
+	function doKeyDown(evt){
+     	//alert(evt.keyCode);
+		if(evt.keyCode == 37) {
+			movePerson('left')
+		}
+		if(evt.keyCode == 39) {
+		   movePerson('right')
+		}
+	
+	}
+
+	window.addEventListener('keydown',doKeyDown,false)
+	
+	
+</script>
+
+</head>
+
+
+<body onload="init();">
+<canvas id="game" width="800" height="600">  
+
+</canvas>
+
+</body>
+
+</html>
+
+</textarea>
